@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome Recruiter!</h1>
+        <form action="/" method="post">
+            <label for="job_role">Select Job Role:</label>
+            <select name="job_role" id="job_role" class="form-control">
+                <option value="Select"> </option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="DevOps Engineer">DevOps Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Mobile App Developer">Mobile App Developer</option>
+                <option value="Web Developer">Web Developer</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary">Get Top Candidates</button>
+        </form>
+        <hr>
+        {% if candidates %}
+        <h2>Top Candidates for {{job_role}}</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Display Name</th>
+                    <th>Reputation</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for candidate in candidates %}
+                <tr>
+                    <td>{{ candidate['Owner Display Name'] }}</td>
+                    <td>{{ candidate['Owner Reputation'] }}</td>
+                    <td>{{ candidate['owner_email_address'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+    <div class="text-center mt-3">
+        <form action="/send_emails" method="post">
+            <input type="hidden" name="job_role" value="{{ job_role }}">
+            <p>Click the button below to send emails to the top candidates.</p>
+            <button type="submit" class="Email_primary">Send Emails</button>
+        </form>
+    </div>
+
+</body>
+</html>

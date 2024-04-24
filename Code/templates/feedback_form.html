@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .feedback-form {
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-form h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .feedback-form input[type="text"],
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    .feedback-form input[type="text"]:focus,
+    .feedback-form textarea:focus {
+      border: 2px solid #3498db;
+      outline: none;
+      box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    }
+
+    .feedback-form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-form input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="feedback-form">
+    <h2>Feedback Form</h2>
+    <form action="#">
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="text" name="email" placeholder="Your Email">
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
